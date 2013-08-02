@@ -11,5 +11,6 @@ build-test/
 Thumbs.db
 .tm*
 
-# ignore the symlink to HaxePunk-UI
+# ignore the symlinks
 /com/haxepunk/ui
+/com/haxepunk/tmx
