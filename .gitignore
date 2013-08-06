@@ -10,6 +10,3 @@ build-test/
 .DS_Store
 Thumbs.db
 .tm*
-
-# ignore the symlink to HaxePunk-UI
-/com/haxepunk/ui
