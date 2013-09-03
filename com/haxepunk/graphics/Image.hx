@@ -90,6 +90,11 @@ class Image extends Graphic
 			}
 			else if (HXP.renderMode.has(RenderMode.HARDWARE))
 			{
+				if (Std.is(source, String))
+					_class = source;
+				else if (name == "")
+					_class = Type.getClassName(Type.getClass(source));
+				
 				setAtlasRegion(Atlas.loadImageAsRegion(source));
 			}
 			else if (Std.is(source, BitmapData))
@@ -214,7 +219,7 @@ class Image extends Graphic
 					_point.y = (point.y + y - originY * sy - camera.y * scrollY);
 				}
 
-				if (_flipped) _point.x += _sourceRect.width;
+				if (_flipped) _point.x += _sourceRect.width * sx;
 
 				_point.x = Math.floor(_point.x * fsx);
 				_point.y = Math.floor(_point.y * fsy);
